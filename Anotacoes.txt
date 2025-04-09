@@ -1,0 +1,51 @@
+Objetivos:
+
+1. Implementar Atributos
+2. Configurar e implementar o banco de dados SupaBase
+3. Configurar e implementar o banco de dados MongoDb Atlas
+4. Configurar e implementar o serviço de armazenamento de imagens na nuvem Cloudinary
+5. Consertar namespace's
+
+Atributos das Classes Derivadas:
+
+Classe: Anel
+	Tamanho: Ex.: 16 (medida do aro).
+	PossuiPedras: bool (indica se o anel tem pedras preciosas).
+	TipoDePedra: Ex.: Diamante, Safira.
+	Formato: Ex.: Solitário, Aliança.
+
+Classe: Brinco
+	TipoDeFecho: Ex.: Tarraxa, Gancho, Pressão.
+	Modelo: Ex.: Argola, Pendente.
+	Altura (cm): Tamanho do brinco.
+	PesoIndividual (g): Peso de um brinco (caso seja par).
+
+Classe: Colar
+	Comprimento (cm): Ex.: 45 cm (altura total).
+	PossuiPingente: bool.
+	Estilo: Ex.: Gola, Longo, Choker.
+	TipoDeCorrente: Ex.: Veneziana, Cartier.
+
+Classe: Piercing
+	Região: Ex.: Nariz, Orelha, Umbigo.
+	Fechamento: Ex.: Encaixe, Rosca.
+	Tamanho (mm): Dimensões específicas.
+	Antialérgico: bool.
+
+Classe: Pingente
+	Formato: Ex.: Coração, Cruz, Geométrico.
+	PesoTotal (g): Peso isolado do pingente.
+	MaterialBase: Ex.: Ouro, Prata (diferente do Material principal, caso haja mix).
+
+Classe: Pulseira
+	TipoDeFecho: Ex.: Ímã, Ajustável.
+	Circunferência (cm): Medida total da pulseira.
+	PossuiCharms: bool (para pulseiras estilo Pandora, por exemplo).
+	Flexibilidade: Ex.: Rígida ou Maleável.
+
+Classe: Relogio
+	TipoDeMovimento: Ex.: Quartz, Mecânico.
+	ResistênciaÀÁgua: Ex.: 50m, 100m.
+	DiâmetroDaCaixa (mm): Tamanho do mostrador.
+	TipoDePulseira: Ex.: Couro, Metal.
+	FonteDeEnergia: Ex.: Bateria, Solar.
