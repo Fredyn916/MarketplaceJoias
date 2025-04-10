@@ -5,6 +5,7 @@ Objetivos:
 3. Implementar o CRUD no contexto Anuncio
 4. Configurar e implementar o banco de dados MongoDb Atlas
 5. Configurar e implementar o serviço de armazenamento de imagens na nuvem Cloudinary, adaptando na criação do usuário e nas imagens do anúncio
+6. Hospedar a API {Render}
 
 Atributos das Classes Derivadas:
 
