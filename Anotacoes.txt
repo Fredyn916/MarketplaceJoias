@@ -1,10 +1,9 @@
 Objetivos:
 
-1. Implementar Atributos
+1. Implementar Atributos (CONCLUÍDO)
 2. Configurar e implementar o banco de dados SupaBase
 3. Configurar e implementar o banco de dados MongoDb Atlas
 4. Configurar e implementar o serviço de armazenamento de imagens na nuvem Cloudinary
-5. Consertar namespace's
 
 Atributos das Classes Derivadas:
 
