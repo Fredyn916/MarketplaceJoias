@@ -1,9 +1,10 @@
 Objetivos:
 
 1. Implementar Atributos (CONCLUÍDO)
-2. Configurar e implementar o banco de dados SupaBase
-3. Configurar e implementar o banco de dados MongoDb Atlas
-4. Configurar e implementar o serviço de armazenamento de imagens na nuvem Cloudinary
+2. Configurar e implementar o banco de dados SupaBase (CONCLUÍDO)
+3. Implementar o CRUD no contexto Anuncio
+4. Configurar e implementar o banco de dados MongoDb Atlas
+5. Configurar e implementar o serviço de armazenamento de imagens na nuvem Cloudinary, adaptando na criação do usuário e nas imagens do anúncio
 
 Atributos das Classes Derivadas:
 
