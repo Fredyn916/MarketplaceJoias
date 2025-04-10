@@ -2,7 +2,8 @@ Objetivos:
 
 1. Implementar Atributos (CONCLUÍDO)
 2. Configurar e implementar o banco de dados SupaBase (CONCLUÍDO)
-3. Implementar o CRUD no contexto Anuncio
+3. Adaptar o contexto Usuario para um cenário com a presença de um administrador
+3,1. Implementar o CRUD no contexto Anuncio
 4. Configurar e implementar o banco de dados MongoDb Atlas
 5. Configurar e implementar o serviço de armazenamento de imagens na nuvem Cloudinary, adaptando na criação do usuário e nas imagens do anúncio
 6. Hospedar a API {Render}
