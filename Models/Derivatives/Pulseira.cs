@@ -3,6 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Models.Derivatives;
 
+[BsonDiscriminator("Pulseira")]
 public class Pulseira : Joia
 {
     [BsonElement("tipo_fecho")]

@@ -20,9 +20,9 @@ public class JoiaService : IJoiaService
     public async Task Post(CreateJoiaDTO joiaDTO)
     {
         Joia joia = _mapper.Map<Joia>(joiaDTO);
-        joia = ReturnPart(joia);
+        var peca = ReturnPart(joia);
 
-        await _joiaRepository.Post(joia);
+        await _joiaRepository.Post(peca);
     }
 
     public async Task<List<Joia>> Get()

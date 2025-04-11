@@ -1,8 +1,11 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
+using Models.Derivatives;
 
 namespace Models.Base;
 
+[BsonDiscriminator(RootClass = true)]
+[BsonKnownTypes(typeof(Anel), typeof(Brinco), typeof(Colar), typeof(Piercing), typeof(Pingente), typeof(Pulseira), typeof(Relogio))]
 public class Joia
 {
     [BsonId]

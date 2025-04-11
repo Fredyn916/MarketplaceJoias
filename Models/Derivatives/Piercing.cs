@@ -3,6 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Models.Derivatives;
 
+[BsonDiscriminator("Piercing")]
 public class Piercing : Joia
 {
     [BsonElement("regiao")]
