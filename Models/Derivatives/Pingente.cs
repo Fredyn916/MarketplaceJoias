@@ -1,8 +1,10 @@
 ﻿using Models.Base;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace Models.Derivatives;
 
 public class Pingente : Joia
 {
+    [BsonElement("formato")]
     public String Formato { get; set; } // Ex: Coração, Cruz, Geométrico...
 }

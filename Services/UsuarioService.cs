@@ -1,4 +1,5 @@
-﻿using DAO.Interfaces;
+﻿using AutoMapper;
+using DAO.Interfaces;
 using Models;
 using Models.DTO;
 using Services.Interfaces;
@@ -8,14 +9,18 @@ namespace Services;
 public class UsuarioService : IUsuarioService
 {
     private readonly IUsuarioRepository _usuarioRepository;
+    private readonly IMapper _mapper;
 
-    public UsuarioService(IUsuarioRepository usuarioRepository)
+    public UsuarioService(IUsuarioRepository usuarioRepository, IMapper mapper)
     {
         _usuarioRepository = usuarioRepository;
+        _mapper = mapper;
     }
 
-    public async Task<ResponseUsuarioDTO> Post(Usuario usuario)
+    public async Task<ResponseUsuarioDTO> Post(CreateUsuarioDTO usuarioDTO)
     {
+        Usuario usuario = _mapper.Map<Usuario>(usuarioDTO);
+
         return await _usuarioRepository.Post(usuario);
     }
 

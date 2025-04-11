@@ -5,7 +5,7 @@ namespace Services.Interfaces;
 
 public interface IUsuarioService
 {
-    Task<ResponseUsuarioDTO> Post(Usuario user);
+    Task<ResponseUsuarioDTO> Post(CreateUsuarioDTO usuarioDTO);
     Task<List<ResponseUsuarioDTO>> Get();
     Task<ResponseUsuarioDTO?> GetById(int id);
     Task Put(Usuario user);

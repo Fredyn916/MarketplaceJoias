@@ -16,7 +16,7 @@ public static class SupabaseClient
                 AutoConnectRealtime = false
             };
 
-            var client = new Supabase.Client(url!, key!, options);
+            var client = new Client(url!, key!, options);
             client.InitializeAsync().Wait();
             return client;
         });

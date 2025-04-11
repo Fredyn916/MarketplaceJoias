@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Models;
 using Models.DTO;
 using Services.Interfaces;
@@ -11,12 +10,11 @@ namespace API.Controllers;
 public class UsuarioController : ControllerBase
 {
     private readonly IUsuarioService _usuarioService;
-    private readonly IMapper _mapper;
 
-    public UsuarioController(IUsuarioService usuarioService, IMapper mapper)
+    public UsuarioController(IUsuarioService usuarioService)
     {
         _usuarioService = usuarioService;
-        _mapper = mapper;
+        
     }
 
     [HttpPost("PostUsuario")]
@@ -24,9 +22,7 @@ public class UsuarioController : ControllerBase
     {
         try
         {
-            Usuario usuario = _mapper.Map<Usuario>(usuarioDTO);
-
-            return await _usuarioService.Post(usuario);
+            return await _usuarioService.Post(usuarioDTO);
         }
         catch (Exception e)
         {
