@@ -1,13 +1,19 @@
 using API.Settings.DI;
+using API.Settings.MongoAtlas;
 using API.Settings.SupaBase;
 using Config.AutoMapper;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
+{
+    options.SerializerSettings.TypeNameHandling = TypeNameHandling.Auto;
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+MongoDbConfiguration.Configure();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 DependencyInjection.Inject(builder);
 SupabaseClient.Inject(builder);

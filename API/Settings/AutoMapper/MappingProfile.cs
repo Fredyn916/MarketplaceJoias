@@ -12,13 +12,14 @@ public class MappingProfile : Profile
     {
         CreateMap<CreateUsuarioDTO, Usuario>().ReverseMap();
         CreateMap<ResponseUsuarioDTO, Usuario>().ReverseMap();
-        CreateMap<CreateJoiaDTO, Joia>().ReverseMap();
-        CreateMap<Anel, Joia>().ReverseMap();
-        CreateMap<Brinco, Joia>().ReverseMap();
-        CreateMap<Colar, Joia>().ReverseMap();
-        CreateMap<Piercing, Joia>().ReverseMap();
-        CreateMap<Pingente, Joia>().ReverseMap();
-        CreateMap<Pulseira, Joia>().ReverseMap();
-        CreateMap<Relogio, Joia>().ReverseMap();
+
+        CreateMap<Joia, CreateJoiaDTO>().ReverseMap();
+        CreateMap<Anel, CreateJoiaDTO>().ReverseMap();
+        CreateMap<Brinco, CreateJoiaDTO>().ReverseMap();
+        CreateMap<Colar, CreateJoiaDTO>().ReverseMap();
+        CreateMap<Piercing, CreateJoiaDTO>().ReverseMap();
+        CreateMap<Pingente, CreateJoiaDTO>().ReverseMap();
+        CreateMap<Pulseira, CreateJoiaDTO>().ReverseMap();
+        CreateMap<Relogio, CreateJoiaDTO>().ReverseMap();
     }
 }
