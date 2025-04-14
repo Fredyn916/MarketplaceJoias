@@ -1,6 +1,6 @@
 ﻿using Supabase;
 
-namespace API.Settings.SupaBase;
+namespace API.Settings.Supabase;
 
 public static class SupabaseClient
 {

@@ -21,5 +21,16 @@ public class MappingProfile : Profile
         CreateMap<Pingente, CreateJoiaDTO>().ReverseMap();
         CreateMap<Pulseira, CreateJoiaDTO>().ReverseMap();
         CreateMap<Relogio, CreateJoiaDTO>().ReverseMap();
+
+        CreateMap<CreateJoiaDTO, EditJoiaDTO>().ReverseMap();
+
+        CreateMap<Joia, EditJoiaDTO>().ReverseMap();
+        CreateMap<Anel, EditJoiaDTO>().ReverseMap();
+        CreateMap<Brinco, EditJoiaDTO>().ReverseMap();
+        CreateMap<Colar, EditJoiaDTO>().ReverseMap();
+        CreateMap<Piercing, EditJoiaDTO>().ReverseMap();
+        CreateMap<Pingente, EditJoiaDTO>().ReverseMap();
+        CreateMap<Pulseira, EditJoiaDTO>().ReverseMap();
+        CreateMap<Relogio, EditJoiaDTO>().ReverseMap();
     }
 }

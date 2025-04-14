@@ -2,7 +2,6 @@
 using Models.DTO;
 using Services.Interfaces;
 using Models.Base;
-using MongoDB.Driver;
 
 namespace API.Controllers;
 
@@ -58,11 +57,11 @@ public class JoiaController : ControllerBase
     }
 
     [HttpPut("PutJoia")]
-    public async Task<IActionResult> Put(Joia joia)
+    public async Task<IActionResult> Put(EditJoiaDTO joiaDTO)
     {
         try
         {
-            await _joiaService.Put(joia);
+            await _joiaService.Put(joiaDTO);
             return Ok();
         }
         catch (Exception e)

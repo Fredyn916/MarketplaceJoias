@@ -8,6 +8,6 @@ public interface IJoiaService
     Task Post(CreateJoiaDTO joiaDTO);
     Task<List<Joia>> Get();
     Task<Joia?> GetById(String id);
-    Task Put(Joia joia);
+    Task Put(EditJoiaDTO joiaDTO);
     Task Delete(String id);
 }

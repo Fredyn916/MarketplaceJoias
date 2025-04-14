@@ -19,7 +19,7 @@ public class JoiaService : IJoiaService
     }
     public async Task Post(CreateJoiaDTO joiaDTO)
     {
-        var peca = ReturnPart(joiaDTO);
+        var peca = ReturnPartPOST(joiaDTO);
 
         await _joiaRepository.Post(peca);
     }
@@ -34,9 +34,11 @@ public class JoiaService : IJoiaService
         return await _joiaRepository.GetById(id);
     }
 
-    public async Task Put(Joia joia)
+    public async Task Put(EditJoiaDTO joiaDTO)
     {
-        await _joiaRepository.Put(joia);
+        var peca = ReturnPartPUT(joiaDTO);
+
+        await _joiaRepository.Put(peca);
     }
 
     public async Task Delete(String id)
@@ -44,7 +46,37 @@ public class JoiaService : IJoiaService
         await _joiaRepository.Delete(id);
     }
 
-    private Joia ReturnPart(CreateJoiaDTO joiaDTO)
+    private Joia ReturnPartPOST(CreateJoiaDTO joiaDTO)
+    {
+        switch (joiaDTO.TipoPeca)
+        {
+            case "Anel":
+                Anel anel = _mapper.Map<Anel>(joiaDTO);
+                return anel;
+            case "Brinco":
+                Brinco brinco = _mapper.Map<Brinco>(joiaDTO);
+                return brinco;
+            case "Colar":
+                Colar colar = _mapper.Map<Colar>(joiaDTO);
+                return colar;
+            case "Piercing":
+                Piercing piercing = _mapper.Map<Piercing>(joiaDTO);
+                return piercing; ;
+            case "Pingente":
+                Pingente pingente = _mapper.Map<Pingente>(joiaDTO);
+                return pingente;
+            case "Pulseira":
+                Pulseira pulseira = _mapper.Map<Pulseira>(joiaDTO);
+                return pulseira;
+            case "Relogio":
+                Relogio relogio = _mapper.Map<Relogio>(joiaDTO);
+                return relogio;
+            default:
+                return _mapper.Map<Joia>(joiaDTO);
+        }
+    }
+
+    private Joia ReturnPartPUT(EditJoiaDTO joiaDTO)
     {
         switch (joiaDTO.TipoPeca)
         {

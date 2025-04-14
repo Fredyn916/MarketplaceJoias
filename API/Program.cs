@@ -1,6 +1,6 @@
 using API.Settings.DI;
 using API.Settings.MongoAtlas;
-using API.Settings.SupaBase;
+using API.Settings.Supabase;
 using Config.AutoMapper;
 using Newtonsoft.Json;
 
