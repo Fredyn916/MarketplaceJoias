@@ -18,9 +18,10 @@ public class JoiaRepository : IJoiaRepository
         _joias = database.GetCollection<Joia>(config["MongoDB:CollectionName"]);
     }
 
-    public async Task Post(Joia joia)
+    public async Task<String> Post(Joia joia)
     {
         await _joias.InsertOneAsync(joia);
+        return joia.Id;
     }
 
     public async Task<List<Joia>> Get()

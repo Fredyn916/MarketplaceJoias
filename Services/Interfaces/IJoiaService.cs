@@ -5,7 +5,7 @@ namespace Services.Interfaces;
 
 public interface IJoiaService
 {
-    Task Post(CreateJoiaDTO joiaDTO);
+    Task<String> Post(CreateJoiaDTO joiaDTO);
     Task<List<Joia>> Get();
     Task<Joia?> GetById(String id);
     Task Put(EditJoiaDTO joiaDTO);

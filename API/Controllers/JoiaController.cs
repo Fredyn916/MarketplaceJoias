@@ -17,16 +17,15 @@ public class JoiaController : ControllerBase
     }
 
     [HttpPost("PostJoia")]
-    public async Task<IActionResult> Post(CreateJoiaDTO joiaDTO)
+    public async Task<String> Post(CreateJoiaDTO joiaDTO)
     {
         try
         {
-            await _joiaService.Post(joiaDTO);
-            return Created();
+            return await _joiaService.Post(joiaDTO);
         }
         catch (Exception e)
         {
-            return BadRequest(e.Message);
+            throw new Exception(e.Message);
         }
     }
 

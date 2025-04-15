@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using CloudinaryDotNet.Actions;
+using CloudinaryDotNet;
 using DAO.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Models;
 using Models.DTO;
 using Supabase;
@@ -9,11 +12,13 @@ namespace DAO;
 public class UsuarioRepository : IUsuarioRepository
 {
     private readonly Client _client;
+    private readonly Cloudinary _cloudinary;
     private readonly IMapper _mapper;
 
-    public UsuarioRepository(Client client, IMapper mapper)
+    public UsuarioRepository(Client client, Cloudinary cloudinary, IMapper mapper)
     {
         _client = client;
+        _cloudinary = cloudinary;
         _mapper = mapper;
     }
 
@@ -69,5 +74,28 @@ public class UsuarioRepository : IUsuarioRepository
             }
         }
         return null;
+    }
+
+    public async Task UploadImage(IFormFile file, int usuarioId)
+    {
+        if (file == null || file.Length == 0)
+            throw new ArgumentException("Arquivo inválido.");
+
+        await using var stream = file.OpenReadStream();
+        var uploadParams = new ImageUploadParams
+        {
+            File = new FileDescription(file.FileName, stream),
+            UseFilename = true,
+            UniqueFilename = false,
+            Overwrite = true,
+            Folder = "FotosPerfil" // Pasta na nuvem
+        };
+
+        var uploadResult = await _cloudinary.UploadAsync(uploadParams);
+
+        Usuario user = _mapper.Map<Usuario>(GetById(usuarioId).Result);
+        user.FotoPerfilURL = uploadResult.SecureUrl.ToString();
+
+        await Put(user);
     }
 }

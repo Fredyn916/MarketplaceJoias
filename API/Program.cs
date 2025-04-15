@@ -1,3 +1,4 @@
+using API.Settings.cloudinary;
 using API.Settings.DI;
 using API.Settings.MongoAtlas;
 using API.Settings.Supabase;
@@ -14,6 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 MongoDbConfiguration.Configure();
+CloudinaryConfiguration.Configure(builder);
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 DependencyInjection.Inject(builder);
 SupabaseClient.Inject(builder);

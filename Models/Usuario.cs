@@ -25,5 +25,5 @@ public class Usuario : BaseModel
     [Column("endereco")]
     public String Endereco { get; set; } // Rua, Nº (Complemento), Bairro, Cidade, Estado - CEP
     [Column("foto_perfil_url")]
-    public String FotoPerfilURL { get; set; }
+    public String FotoPerfilURL { get; set; } //  = URL da foto de perfil padrão
 }

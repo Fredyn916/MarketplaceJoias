@@ -13,6 +13,9 @@ public class MappingProfile : Profile
         CreateMap<CreateUsuarioDTO, Usuario>().ReverseMap();
         CreateMap<ResponseUsuarioDTO, Usuario>().ReverseMap();
 
+        CreateMap<CreateAnuncioDTO, Anuncio>().ReverseMap();
+        CreateMap<ResponseAnuncioDTO, Anuncio>().ReverseMap();
+
         CreateMap<Joia, CreateJoiaDTO>().ReverseMap();
         CreateMap<Anel, CreateJoiaDTO>().ReverseMap();
         CreateMap<Brinco, CreateJoiaDTO>().ReverseMap();

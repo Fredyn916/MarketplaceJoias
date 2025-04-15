@@ -11,8 +11,10 @@ public static class DependencyInjection
     {
         builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
         builder.Services.AddScoped<IJoiaRepository, JoiaRepository>();
+        builder.Services.AddScoped<IAnuncioRepository, AnuncioRepository>();
 
         builder.Services.AddScoped<IUsuarioService, UsuarioService>();
         builder.Services.AddScoped<IJoiaService, JoiaService>();
+        builder.Services.AddScoped<IAnuncioService, AnuncioService>();
     }
 }

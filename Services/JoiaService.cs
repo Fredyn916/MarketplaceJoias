@@ -17,11 +17,12 @@ public class JoiaService : IJoiaService
         _joiaRepository = joiaRepository;
         _mapper = mapper;
     }
-    public async Task Post(CreateJoiaDTO joiaDTO)
+
+    public async Task<String> Post(CreateJoiaDTO joiaDTO)
     {
         var peca = ReturnPartPOST(joiaDTO);
 
-        await _joiaRepository.Post(peca);
+        return await _joiaRepository.Post(peca);
     }
 
     public async Task<List<Joia>> Get()

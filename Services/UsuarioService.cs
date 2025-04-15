@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DAO.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Models;
 using Models.DTO;
 using Services.Interfaces;
@@ -47,5 +48,10 @@ public class UsuarioService : IUsuarioService
     public async Task<ResponseUsuarioDTO> Login(String email, String password)
     {
         return await _usuarioRepository.Login(email, password);
+    }
+
+    public async Task UploadImage(IFormFile file, int usuarioId)
+    {
+        await _usuarioRepository.UploadImage(file, usuarioId);
     }
 }

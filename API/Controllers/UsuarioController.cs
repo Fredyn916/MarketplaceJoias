@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Models;
 using Models.DTO;
+using Services;
 using Services.Interfaces;
 
 namespace API.Controllers;
@@ -97,6 +98,20 @@ public class UsuarioController : ControllerBase
         catch (Exception e)
         {
             throw new Exception(e.Message);
+        }
+    }
+
+    [HttpPost("UploadImageUsuario")]
+    public async Task<IActionResult> UploadImage(IFormFile file, int usuarioId)
+    {
+        try
+        {
+            await _usuarioService.UploadImage(file, usuarioId);
+            return Ok();
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
         }
     }
 }
