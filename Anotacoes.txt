@@ -5,7 +5,7 @@ Objetivos:
 3. Adaptar o contexto Usuario para um cenário com a presença de um administrador
 3,1. Implementar o CRUD no contexto Anuncio (CONCLUÍDO)
 4. Configurar e implementar o banco de dados MongoDb Atlas (CONCLUÍDO)
-5. Configurar e implementar o serviço de armazenamento de imagens na nuvem Cloudinary, adaptando na criação do usuário e nas imagens do anúncio
+5. Configurar e implementar o serviço de armazenamento de imagens na nuvem Cloudinary, adaptando na criação do usuário e nas imagens do anúncio (CONCLUÍDO)
 6. Hospedar a API {Render}
 
 Lógica da criação de um anúncio de venda pelo usuário:
